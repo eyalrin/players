@@ -1,12 +1,12 @@
 package com.intuit.players.service;
 
-import com.intuit.players.entity.PlayerEntity;
+import com.intuit.players.entity.Player;
 
 import java.util.List;
 
 public interface PlayerService {
 
-    List<PlayerEntity> getAllPlayers();
+    List<Player> getAllPlayers();
 
-    PlayerEntity getPlayerById(String playerId);
+    Player getPlayerById(String playerId);
 }

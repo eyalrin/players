@@ -3,7 +3,7 @@ spring :
    name: players
 
   datasource:
-    url: jdbc:h2:mem:player-db
+    url: jdbc:h2:mem:player-db;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE;
     username: username
     password: password
     driverClassName: org.h2.Driver
@@ -12,3 +12,5 @@ spring :
       enabled: true
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none

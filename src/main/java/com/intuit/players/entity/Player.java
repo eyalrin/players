@@ -8,27 +8,25 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PlayerEntity {
+public class Player {
 
     @Id
     @Column(name = "player_id")
     private String playerId;
 
     @Column(name = "birth_year")
-    private int birthYear;
+    private String birthYear;
 
     @Column(name = "birth_month")
-    private int birthMonth;
+    private String birthMonth;
 
     @Column(name = "birth_day")
-    private int birthDay;
+    private String birthDay;
 
     @Column(name = "birth_country")
     private String birthCountry;
@@ -40,18 +38,18 @@ public class PlayerEntity {
     private String birthCity;
 
     @Column(name = "death_year")
-    private int deathYear;
+    private String deathYear;
 
     @Column(name = "death_month")
-    private int deathMonth;
+    private String deathMonth;
 
     @Column(name = "death_day")
-    private int deathDay;
+    private String deathDay;
 
     @Column(name = "death_country")
     private String deathCountry;
 
-    @Column(name = "death_sState")
+    @Column(name = "death_state")
     private String deathState;
 
     @Column(name = "death_city")
@@ -67,10 +65,10 @@ public class PlayerEntity {
     private String nameGiven;
 
     @Column(name = "weight")
-    private int weight;
+    private String weight;
 
     @Column(name = "height")
-    private int height;
+    private String height;
 
     @Column(name = "bats")
     private String bats;
@@ -79,10 +77,10 @@ public class PlayerEntity {
     private String throwingArm;
 
     @Column(name = "debut")
-    private Date debut;
+    private String debut;
 
     @Column(name = "final_game")
-    private Date finalGame;
+    private String finalGame;
 
     @Column(name = "retro_id")
     private String retroID;
