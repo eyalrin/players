@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/players")
+@RequestMapping("/api/player")
 public class PlayerController {
 
     private final PlayerService playerService;
@@ -21,27 +21,16 @@ public class PlayerController {
         this.playerService = playerService;
     }
 
-//    @GetMapping
-//    public ResponseEntity<List<Player>> getAllPlayers() {
-//        List<Player> allPlayers = playerService.getAllPlayers();
-//        return new ResponseEntity<>(allPlayers, HttpStatus.OK);
-//
-//    }
-//
-//    @GetMapping("/{playerId}")
-//    public ResponseEntity<Player> getPlayerById(@PathVariable String playerId) {
-//        Player player = playerService.getPlayerById(playerId);
-//        return new ResponseEntity<>(player, HttpStatus.OK);
-//    }
-
     @GetMapping
-    public List<Player> getAllPlayers() {
-        return playerService.getAllPlayers();
+    public ResponseEntity<List<Player>> getAllPlayers() {
+        List<Player> allPlayers = playerService.getAllPlayers();
+        return new ResponseEntity<>(allPlayers, HttpStatus.OK);
 
     }
 
     @GetMapping("/{playerId}")
-    public Player getPlayerById(@PathVariable String playerId) {
-        return playerService.getPlayerById(playerId);
+    public ResponseEntity<Player> getPlayerById(@PathVariable String playerId) {
+        Player player = playerService.getPlayerById(playerId);
+        return new ResponseEntity<>(player, HttpStatus.OK);
     }
 }

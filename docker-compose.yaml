@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  player-api:
+    container_name: player-api
+    build:
+      context: docker-player-api
+      dockerfile: dockerfile
+    image: player-api:latest
+    ports:
+      - 8080:8080
+    networks:
+      - spring-cloud-network
+
+#  player-db:
+
+networks:
+  spring-cloud-network:
+    driver: bridge

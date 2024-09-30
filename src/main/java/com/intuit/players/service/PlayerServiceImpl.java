@@ -1,7 +1,8 @@
 package com.intuit.players.service;
 
-import com.intuit.players.entity.PlayerEntity;
+import com.intuit.players.entity.Player;
 import com.intuit.players.repository.PlayerRepository;
+import com.intuit.players.service.exception.PlayerNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,12 +17,12 @@ public class PlayerServiceImpl implements PlayerService {
     }
 
     @Override
-    public List<PlayerEntity> getAllPlayers() {
+    public List<Player> getAllPlayers() {
         return playerRepository.findAll();
     }
 
     @Override
-    public PlayerEntity getPlayerById(String playerId) {
-        return playerRepository.findById(playerId).orElse(null);
+    public Player getPlayerById(String playerId) {
+        return playerRepository.findById(playerId).orElseThrow(() -> new PlayerNotFoundException(playerId));
     }
 }
