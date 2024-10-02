@@ -1,8 +1,13 @@
 package com.intuit.players.repository;
 
 import com.intuit.players.entity.Player;
-import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface PlayerRepository extends JpaRepository<Player, String> {
+import java.util.List;
+import java.util.Optional;
 
+public interface PlayerRepository<T, ID>  {
+
+    Optional<T> findById(ID id);
+
+    List<T> findAll();
 }

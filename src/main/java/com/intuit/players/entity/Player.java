@@ -83,8 +83,8 @@ public class Player {
     private String finalGame;
 
     @Column(name = "retro_id")
-    private String retroID;
+    private String retroId;
 
     @Column(name = "bbref_id")
-    private String bbrefID;
+    private String bbrefId;
 }
